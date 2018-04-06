@@ -19,12 +19,12 @@ func TestUUID(t *testing.T) {
 		t.Fatalf("cannot make generator: %v", err)
 	}
 	uuid := g.Next()
-	buf[0] = 1 ^ 1
+	buf[0] = 1 + 1
 	if uuid != buf {
 		t.Fatalf("unexpected UUID; got %x; want %x", uuid, buf)
 	}
 	uuid = g.Next()
-	buf[0] = 1 ^ 2
+	buf[0] = 1 + 2
 	if uuid != buf {
 		t.Fatalf("unexpected next UUID; got %x; want %x", uuid, buf)
 	}
